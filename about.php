@@ -127,7 +127,11 @@ Tenggara dalam bidang teknologi dan informatika."</p>
 
             <div class="py-8 border-b border-gray-100">
                 <div class="cd-wrapper flex flex-col md:flex-row justify-center items-center">
-                    <h2 class="h2 lg:hidden max-w-lg mx-auto font-extrabold pt-6">Commission 1: Education</h2>
+                    
+                  <h2 class="h2 lg:hidden max-w-lg mx-auto font-extrabold pt-6 cursor-pointer hover:text-blue-500 transition">
+                    Commission 1: Education
+                  </h2>
+
                     <div class="cd-img-container">
                         <img class="cd-img mb-12" src="assets/img/about/respo-logo-2025.svg" alt="">
                         <div class="overlay-text">
@@ -138,7 +142,7 @@ Tenggara dalam bidang teknologi dan informatika."</p>
                         </div>
                     </div>
                     <div class="hidden lg:block cd-img-container">
-                        <img class="com-logo cd-img" src="assets/img/about/komsat-logo-2025.svg" alt="">
+                        <img  id="openEducationModal" class="com-logo cd-img" src="assets/img/about/komsat-logo-2025.svg" alt="">
                     </div>
                     <div class="cd-img-container">
                         <img class="cd-img" src="assets/img/about/ae-logo-2025.svg" alt="">
@@ -148,6 +152,27 @@ Tenggara dalam bidang teknologi dan informatika."</p>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="educationModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+              <div class="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-3xl w-full relative">
+                <!-- Close button -->
+                <button id="closeModalBtn" class="absolute top-3 right-3 text-gray-700 hover:text-red-500 text-2xl font-bold">&times;</button>
+
+                <!-- Video container -->
+                <div class="aspect-video w-full">
+                  <iframe
+                    id="educationVideo"
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/qSEqg0m1cAU"
+                    title="Commission 1: Education Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
             </div>
 
             <div class="py-8 border-b border-gray-100">
@@ -311,6 +336,36 @@ Tenggara dalam bidang teknologi dan informatika."</p>
     <?php require_once('components/footer.php') ?>
 
     <!-- <script src="script.js"></script> -->
+<script>
+  const openBtn = document.getElementById('openEducationModal');
+  const modal = document.getElementById('educationModal');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const video = document.getElementById('educationVideo');
+
+  // Replace with your actual video link
+  const videoSrc = "https://www.youtube.com/embed/qSEqg0m1cAU";
+
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    video.src = videoSrc; // start video when opened
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    video.src = ""; // stop video when closed
+  });
+
+  // Optional: close when clicking outside the modal
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      video.src = "";
+    }
+  });
+</script>
 </body>
 
 </html>
