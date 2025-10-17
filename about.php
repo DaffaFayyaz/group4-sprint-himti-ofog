@@ -3,16 +3,17 @@
 
 <head>
     <?php
-        $USE_TAILWIND = true;
-        $TITLE = 'About Us';
-        require('components/head.php');
+    $USE_TAILWIND = true;
+    $TITLE = 'About Us';
+    require('components/head.php');
     ?>
     <style>
     </style>
 </head>
 
 <body>
-    <?php $NAVBAR_SET_IMMERSIVE = true; require_once('components/navbar.php'); ?>
+    <?php $NAVBAR_SET_IMMERSIVE = true;
+    require_once('components/navbar.php'); ?>
     <div class="wrapper-dark pt-16 md:pt-0">
         <div class="container">
             <h1 class="title white">
@@ -23,7 +24,7 @@
                 <div class="half border-b lg:border-b-0 lg:border-r border-gray-100 pb-12 w-full lg:w-1/2">
                     <h2 class="h2 pb-10">Vision</h2>
                     <p>"Menjadikan HIMTI BINUS University sebagai Himpunan Mahasiswa yang dikenal se-Asia
-Tenggara dalam bidang teknologi dan informatika."</p>
+                        Tenggara dalam bidang teknologi dan informatika."</p>
                 </div>
                 <div class="half pt-6 pt-12 lg:pt-0 w-full lg:w-1/2">
                     <h2 class="h2 pb-10">Mission</h2>
@@ -100,7 +101,7 @@ Tenggara dalam bidang teknologi dan informatika."</p>
                         <img src="assets/img/about/Struktur-DPI-2025.png" Class="Bagan" alt="" style="display: flex; margin: auto;">
                     </a>
                     <a href="assets/img/about/Struktur-NON-DPI-2025.png" target="_blank">
-                        <img src="assets/img/about/Struktur-NON-DPI-2025.png"  Class="Bagan" alt="" style="display: flex; margin: auto;">
+                        <img src="assets/img/about/Struktur-NON-DPI-2025.png" Class="Bagan" alt="" style="display: flex; margin: auto;">
                     </a>
                 </div>
             </div>
@@ -127,10 +128,10 @@ Tenggara dalam bidang teknologi dan informatika."</p>
 
             <div class="py-8 border-b border-gray-100">
                 <div class="cd-wrapper flex flex-col md:flex-row justify-center items-center">
-                    
-                  <h2 class="h2 lg:hidden max-w-lg mx-auto font-extrabold pt-6 cursor-pointer hover:text-blue-500 transition">
-                    Commission 1: Education
-                  </h2>
+
+                    <h2 class="h2 lg:hidden max-w-lg mx-auto font-extrabold pt-6 cursor-pointer hover:text-blue-500 transition">
+                        Commission 1: Education
+                    </h2>
 
                     <div class="cd-img-container">
                         <img class="cd-img mb-12" src="assets/img/about/respo-logo-2025.svg" alt="">
@@ -224,7 +225,7 @@ Tenggara dalam bidang teknologi dan informatika."</p>
                         <img class="cd-img" src="assets/img/about/supervisor-logo-2025.svg" alt="">
                         <div class="overlay-text">
                             <h3 class="h-cd">Supervisor</h3>
-                            <p class="text-justify">Divisi ini membina dan mengawasi kegiatan pada region-region yang belum memiliki struktur kepengurusan sendiri, 
+                            <p class="text-justify">Divisi ini membina dan mengawasi kegiatan pada region-region yang belum memiliki struktur kepengurusan sendiri,
                                 sambil perlahan-lahan mendorong kinerja dan kepengurusan untuk periode berikutnya.</p>
                         </div>
                     </div>
@@ -235,7 +236,7 @@ Tenggara dalam bidang teknologi dan informatika."</p>
                         <img class="cd-img" src="assets/img/about/hrd-logo-2025.svg" alt="">
                         <div class="overlay-text">
                             <h3 class="h-cd">Human Resource Department</h3>
-                            <p class="text-justify">Divisi ini bertugas untuk melakukan quality control dalam sumber daya manusia dalam ruang lingkup HIMTI. 
+                            <p class="text-justify">Divisi ini bertugas untuk melakukan quality control dalam sumber daya manusia dalam ruang lingkup HIMTI.
                                 Mengawasi, mengevaluasi, dan menyeleksi adalah jobdesc umum bagi HRD.</p>
                         </div>
                     </div>
@@ -309,16 +310,16 @@ Tenggara dalam bidang teknologi dan informatika."</p>
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 
 
-      <!--  Modal pop-up video for each Commissions-->
-      <div id="universalModal" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
+    <!--  Modal pop-up video for each Commissions-->
+    <!-- <div id="universalModal" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
         <div class="relative w-[95vw] md:w-[90vw] lg:w-[85vw] xl:w-[80vw] h-[80vh] bg-black rounded-2xl shadow-2xl overflow-hidden flex flex-col justify-center items-center">
-          <!-- Close Button -->
+          Close Button
           <button id="closeUniversalModal" class="absolute top-4 right-6 text-white hover:text-red-400 text-4xl font-bold z-10">&times;</button>
 
-          <!-- Video Container -->
+          Video Container
           <iframe
             id="modalVideo"
             class="w-full h-full rounded-2xl"
@@ -328,41 +329,63 @@ Tenggara dalam bidang teknologi dan informatika."</p>
             allowfullscreen>
           </iframe>
         </div>
-      </div>
+      </div> -->
+    <div id="universalModal"
+        class="fixed inset-0 bg-black/80 hidden justify-center items-center z-50">
+        <div
+            class="relative w-full max-w-6xl md:max-w-7xl h-[80vh] bg-black rounded-2xl shadow-2xl overflow-hidden"
+            style="width: 90vw; max-width: 1280px; height: 70vh;"> <!-- fallback if Tailwind misses -->
+
+            <!-- Close Button -->
+            <button id="closeUniversalModal"
+                class="absolute top-4 right-6 text-white hover:text-red-400 text-4xl font-bold z-10">&times;</button>
+
+            <!-- 16:9 wrapper ensures no letterboxing if you prefer aspect lock -->
+            <div class="relative w-full h-full">
+                <iframe id="modalVideo"
+                    class="absolute inset-0 w-full h-full block"
+                    src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
 
     <?php require_once('components/footer.php') ?>
 
     <!-- <script src="script.js"></script> -->
 
-   <script>
-     const modal = document.getElementById('universalModal');
-     const closeBtn = document.getElementById('closeUniversalModal');
-     const videoFrame = document.getElementById('modalVideo');
-     const triggers = document.querySelectorAll('.open-modal');
+    <script>
+        const modal = document.getElementById('universalModal');
+        const closeBtn = document.getElementById('closeUniversalModal');
+        const videoFrame = document.getElementById('modalVideo');
+        const triggers = document.querySelectorAll('.open-modal');
 
-     triggers.forEach(trigger => {
-       trigger.addEventListener('click', () => {
-         const videoUrl = trigger.getAttribute('data-video');
-         modal.classList.remove('hidden');
-         modal.classList.add('flex');
-         videoFrame.src = videoUrl + '?autoplay=1';
-       });
-     });
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const videoUrl = trigger.getAttribute('data-video');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                videoFrame.src = videoUrl + '?autoplay=1';
+            });
+        });
 
-     closeBtn.addEventListener('click', () => {
-       modal.classList.add('hidden');
-       modal.classList.remove('flex');
-       videoFrame.src = "";
-     });
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            videoFrame.src = "";
+        });
 
-     modal.addEventListener('click', (e) => {
-       if (e.target === modal) {
-         modal.classList.add('hidden');
-         modal.classList.remove('flex');
-         videoFrame.src = "";
-       }
-     });
-   </script>
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                videoFrame.src = "";
+            }
+        });
+    </script>
 
 </body>
 
